@@ -5,11 +5,13 @@ class HomeController < ApplicationController
   require 'json'
 
   def top
-    @post = Post.new(params[:id])
+    
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.new(address: params[:addres],latitude: params[:id],
+    longitude: params[:id],range: params[:range],
+  smoking: params[:smoking])
     session[:key] = "a53d2b44f8d80d6d"
     session[:lat] = @post.latitude
     session[:lug] = @post.longitude
@@ -18,11 +20,11 @@ class HomeController < ApplicationController
     session[:keyword] = "居酒屋"
     session[:format] = "json"
     
-    render("/show")
+    render("/show/#{params[:id]}")
   end
 
   def show
-
+    @post = Post.find(params[:id])
 
     data = {
       "key": session[:key],

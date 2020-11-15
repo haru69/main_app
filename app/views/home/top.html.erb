@@ -1,10 +1,10 @@
 <h1>居酒屋ファインダー</h1>
 
-<body>
-<%= #form_for @post,url: "/update", method: "post" do %>
 
-<%= form_with(model: @post, local: true,url: "/update", method: "post") do %>
-  <% =form_text_field :address,placeholder:"住所を入力して下さい" %>
+<%#= form_for @post,url: "/update", method: "post" do %>
+
+<%#= form_with(model: @post, local: true,url: "/update", method: "post") do %>
+  <%#= form_text_field :address,placeholder:"住所を入力して下さい" %>
 
 
 <li>お店までの距離</li>
@@ -27,7 +27,7 @@
 </select>
 <br><br><br>
 
-<% end %>
+<%# end %>
 
 <a href="/show" class="btn-square">検索</a>
 
@@ -36,6 +36,6 @@
    
 
 
-</body>
+
 <br><br><br>
 Powered by <a style="text-align:right" href="http://webservice.recruit.co.jp/">ホットペッパー Webサービス</a>
